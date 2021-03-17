@@ -265,6 +265,7 @@ function! tsuquyomi#projectInfo(file)
   if has_key(l:result, 'fileNames')
     for fileName in l:result.fileNames
       if fileName =~ 'typescript/lib/lib.d.ts$'
+      elseif fileName =~ 'node_modules'
       else
         call add(l:result.filteredFileNames, fileName)
       endif
